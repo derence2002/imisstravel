@@ -23,10 +23,10 @@ kubectl exec -it nginx-pod-name -- curl http://localhost #run this as many times
 5) Load the Kibana dashboard, you should be able to see the access logs
 
 6) To create elasticsearch and kibana in the same K8S cluster:
-kubectl apply -f namespace.yaml
+kubectl apply -f namespace.yaml #this creates elastic-kibana namespace
 
-kubectl -n elastic-kibana apply -f elasticsearch.yaml
-kubectl -n elastic-kibana apply -f kibana.yaml
+kubectl apply -f elasticsearch.yaml
+kubectl apply -f kibana.yaml
 
 7) Port forward the kibana service
 kubectl -n elastic-kibana port-forward svc/kibana 5601 &
