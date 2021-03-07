@@ -4,7 +4,7 @@ This example leverages an Elasticsearch and Kibana that are deployed in the same
 
 Steps of execution:
 
-1） fluentd image:
+1) fluentd image:
 docker build . -t derence/fluentd #Please use your own tag
 docker push derence/fluentd
 
