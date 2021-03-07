@@ -6,18 +6,23 @@ Steps of execution:
 
 1) fluentd image:
 docker build . -t derence/fluentd #Please use your own tag
+
 docker push derence/fluentd
 
 
 2) nginx configmap and deployment:
 kubectl apply -f configmap.yaml #Feel free to customize the default loading page
+
 kubectl apply -f deployment.yaml 
 
 
 3) fluentd namespace, rbac, configmap and daemonset:
 kubectl apply -f namespace.yaml #this creates fluentd namespace 
+
 kubectl apply -f rbac.yaml 
+
 kubectl apply -f configmap.yml 
+
 kubectl apply -f daemonset.yml 
 
 
@@ -32,6 +37,7 @@ kubectl exec -it nginx-pod-name -- curl http://localhost #run this as many times
 kubectl apply -f namespace.yaml #this creates elastic-kibana namespace
 
 kubectl apply -f elasticsearch.yaml
+
 kubectl apply -f kibana.yaml
 
 
