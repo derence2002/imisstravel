@@ -1,0 +1,13 @@
+FROM alpine
+
+RUN apk --no-cache add curl
+
+RUN addgroup -g 1001 -S devops && adduser -u 1001 -S devops -G devops
+
+ADD ./curl.sh /home/devops/
+
+RUN chown devops.devops /home/devops/curl.sh
+
+USER devops
+
+WORKDIR /home/devops
