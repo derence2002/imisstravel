@@ -3,6 +3,7 @@ To create Nginx pod that loads a custom landing page and use Fluentd to send the
 This example leverages an Elasticsearch and Kibana that are deployed in the same Kubernetes cluster
 
 Steps of execution:
+
 1） fluentd image:
 docker build . -t derence/fluentd #Please use your own tag
 docker push derence/fluentd
